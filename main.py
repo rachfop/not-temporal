@@ -6,6 +6,7 @@ from datetime import timedelta
 
 from activities import compose_greeting, compose_new_greeting
 
+
 async def greeting_workflow(name: str) -> str:
     greeting_input = ComposeGreetingInput("Hello", name)
     farewell_input = ComposeGreetingInput("Goodbye", name)
@@ -28,6 +29,7 @@ async def greeting_workflow(name: str) -> str:
         retry_policy=retry_policy,
     )
     return greeting_function, farewell_function
+
 
 async def main():
     try:

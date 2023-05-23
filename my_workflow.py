@@ -2,6 +2,7 @@ import asyncio
 import random
 from datetime import timedelta
 
+
 class RetryPolicy:
     def __init__(
         self,
@@ -16,6 +17,7 @@ class RetryPolicy:
         self.maximum_interval = maximum_interval
         self.maximum_attempts = maximum_attempts
         self.non_retryable_errors = non_retryable_errors
+
 
 async def retry_with_backoff(func, *args, retry_policy: RetryPolicy, **kwargs):
     attempts = 0
